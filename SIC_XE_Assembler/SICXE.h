@@ -16,7 +16,7 @@ extern bool FindHash(std::string keyword);
 extern int FindOpCode();
 extern int FindFormat(std::string& sour);
 extern bool FindBTree(std::string symbol);
-extern void InsertBTree(string symbol, string loc);
+extern void InsertBTree(std::string symbol, std::string loc);
 //全域變數
 extern int rendom_number; //37可以為任意質數
 extern int prime;

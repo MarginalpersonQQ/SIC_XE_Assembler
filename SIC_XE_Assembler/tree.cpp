@@ -17,7 +17,7 @@ public:
     void ino_show(treenode* root); 
     treenode* tree = NULL; 
 }; 
-b_tree tree;
+b_tree btree;
 
 void b_tree::b_treeinsert(string s, string lo) {
     treenode* newNode = new treenode();
@@ -65,13 +65,30 @@ void b_tree::ino_show(treenode* root) {
 }
 
 
-void FindBTree(string symbol) {
-    if (tree == NULL) {
+bool FindBTree(string symbol) {
+    if (btree.tree == NULL) {
         return false;
+    }
+    else {
+        treenode* tempnode = btree.tree;
+        while (true) {
+            if (tempnode->data == symbol) {
+                return true;
+            }
+            else if (tempnode->left != NULL && tempnode->data > symbol) {
+                tempnode = tempnode->left;
+            }
+            else if (tempnode->right != NULL && tempnode->data < symbol) {
+                tempnode = tempnode->right;
+            }
+            else {
+                return false;
+            }
+        }
     }
 }
 
 void InsertBTree(string symbol, string loc) {
-    tree.b_treeinsert(symbol, loc);
+    btree.b_treeinsert(symbol, loc);
 }
 

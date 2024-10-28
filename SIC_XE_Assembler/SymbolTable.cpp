@@ -17,7 +17,9 @@ void BuildBT() {
 	else {
 		LOC = 0x0;
 	}
-	InsertBTree(stemp[0], LOC);
+	stringstream ss;
+	ss << std::hex << LOC; // 將數字轉為 16 進位格式
+	InsertBTree(stemp[0], ss.str());
 	while (getline(myfile, line))
 	{
 		string temp[3] = {};
@@ -36,7 +38,8 @@ void BuildBT() {
 						cout << "Duplicate Symbol Error." << endl;
 					} 
 					else {
-						InsertBTree(temp[0], LOC);
+						ss << std::hex << LOC; // 將數字轉為 16 進位格式
+						InsertBTree(temp[0], ss.str());
 					}
 				}
 			}
