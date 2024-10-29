@@ -18,21 +18,18 @@
     <ClCompile Include="SIC.cpp">
       <Filter>資源檔</Filter>
     </ClCompile>
-    <ClCompile Include="hash.cpp">
+    <ClCompile Include="Hash.cpp">
       <Filter>資源檔</Filter>
     </ClCompile>
     <ClCompile Include="SymbolTable.cpp">
       <Filter>資源檔</Filter>
     </ClCompile>
-    <ClCompile Include="tree.cpp">
+    <ClCompile Include="Tree.cpp">
       <Filter>資源檔</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SICXE.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="hash.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

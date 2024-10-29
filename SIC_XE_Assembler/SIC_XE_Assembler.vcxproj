@@ -128,13 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="hash.cpp" />
+    <ClCompile Include="Hash.cpp" />
     <ClCompile Include="SIC.cpp" />
     <ClCompile Include="SymbolTable.cpp" />
-    <ClCompile Include="tree.cpp" />
+    <ClCompile Include="Tree.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="hash.h" />
     <ClInclude Include="SICXE.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

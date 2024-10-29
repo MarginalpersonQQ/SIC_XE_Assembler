@@ -2,7 +2,7 @@
 using namespace std;
 int LOC = 0x0;
 
-void BuildBT() {
+void BuildBTreeAndLoc() {
 	ofstream writefile;
 	writefile.open("..\\PASS1.txt");
 	string line;
@@ -30,8 +30,8 @@ void BuildBT() {
 			cout << "\t" << temp[0] << "\t" << temp[1] << "\t" << temp[2] << endl;
 			writefile << format(" {} {} {}\n", temp[0], temp[1], temp[2]);
 			LOC = stoi(temp[2], nullptr, 16);
-			ss << std::hex << LOC; // 將數字轉為 16 進位格式
-			InsertBTree(temp[0], ss.str());
+			string x = format("{:#x}", LOC);
+			InsertBTree(temp[0], x);
 			continue;
 		}
 		if (FindHash(temp[0]) || temp[0] == "BASE" || temp[0] == "END") {
@@ -47,8 +47,8 @@ void BuildBT() {
 						cout << "Duplicate Symbol Error." << temp[0] << endl;
 					}
 					else {
-						ss << std::hex << LOC; // 將數字轉為 16 進位格式
-						InsertBTree(temp[0], ss.str());
+						string x = format("{:#x}", LOC);
+						InsertBTree(temp[0], x);
 					}
 					
 				}

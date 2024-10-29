@@ -8,6 +8,9 @@ int main() {
 	hashTotxt();
 	cout << "Hash Out Put to \"HashTable.csv\"!!!" << "\n"  << endl;
 	cout << "Start Build Binary Tree...\n" << endl;
-	BuildBT();
+	cout << format("Loc\tSymbol\tOpcode\tStatment") << endl;
+	BuildBTreeAndLoc();
+	cout << "Build Completed." << endl;
+	ShowBTree();
 	return 0;
 }
