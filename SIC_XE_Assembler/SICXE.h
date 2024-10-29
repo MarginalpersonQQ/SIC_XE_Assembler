@@ -7,6 +7,7 @@
 #include <sstream>
 #include <windows.h>
 #include <typeinfo>
+#include <format> 
 
 //¥þ°ì¨ç¼Æ
 extern void hashInit();
@@ -14,7 +15,7 @@ extern void hashTotxt();
 extern void BuildBT();
 extern bool FindHash(std::string keyword);
 extern int FindOpCode();
-extern int FindFormat(std::string& sour);
+extern int FindFormat(std::string keyword);
 extern bool FindBTree(std::string symbol);
 extern void InsertBTree(std::string symbol, std::string loc);
 extern void ShowBTree();

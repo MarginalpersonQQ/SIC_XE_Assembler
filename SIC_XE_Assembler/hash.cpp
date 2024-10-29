@@ -200,21 +200,26 @@ bool FindHash(string keyword){
     return false;  
 }
 
-int FindFormat(string& sour){
-    int plus = 0;
-    string target;
-    if (sour[0] == '+'){
-        plus += 1;
-		for (int i = 1; i < sour.length(); i++) {
-			target += sour[i];
-		}
+int FindFormat(string keyword) {
+    int num = 0, sum = 0;
+    if (keyword[0] == '+') {
+        keyword = keyword.substr(1);
+        sum++;
     }
-	for (auto& operation : opt) {
-		if (operation.op_n == target||operation.op_n == sour) {
-			return operation.ft+plus;  // 返回找到的格式
-		}
-	}
-	return 0; 
+    for (int j = 0; j < keyword.length(); j++) {
+        num = (num * rendom_number + (keyword[j] - 'A' + 1));         //(opt[i].op_n[j] - 'A' + 1)計算ASCII。
+    }
+    num %= prime;
+    node* x = hashTable.table[num];
+    if (x != NULL) {
+        while (x != NULL) {
+            if (x->data == keyword) {
+                return x->format + sum;
+            }
+            x = x->link;
+        }
+    }
+    return 0;
 }
 
 int FindOpCode() {
