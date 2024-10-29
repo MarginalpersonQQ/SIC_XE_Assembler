@@ -92,3 +92,7 @@ void InsertBTree(string symbol, string loc) {
     btree.b_treeinsert(symbol, loc);
 }
 
+void ShowBTree() {
+    btree.ino_show(btree.tree);
+}
+

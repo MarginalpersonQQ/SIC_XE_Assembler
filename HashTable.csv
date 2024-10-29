@@ -31,7 +31,7 @@ LDT,3,74, -> ,LPS,3,d0
 COMPF,3,88, -> ,LDX,3,04
 SUB,3,1c
 COMP,3,28, -> ,COMPR,2,a0
-SIO,1,f0
+CLEAR,2,b4, -> ,SIO,1,f0
 HIO,1,f4
 RD,3,d8
 JGT,3,34
@@ -47,7 +47,7 @@ TIXR,2,b8
 TD,3,e0
 LDCH,3,50
 RMO,2,ac
-CLERA,2,b4, -> ,JSUB,3,48
+JSUB,3,48
 STSW,3,e8
 WD,3,dc
 JLT,3,38

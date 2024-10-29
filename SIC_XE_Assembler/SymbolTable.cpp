@@ -25,7 +25,7 @@ void BuildBT() {
 		string temp[3] = {};
 		istringstream data(line);
 		data >> temp[0] >> temp[1] >> temp[2];
-		if (FindHash(temp[0])){
+		if (FindHash(temp[0]) || temp[0] == "BASE") {
 			temp[2] = temp[1];
 			temp[1] = temp[0];
 			temp[0] = " ";
@@ -35,12 +35,17 @@ void BuildBT() {
 			if (temp[0] != ".") {
 				if (temp[0] != " ") {
 					if (FindBTree(temp[0])) {
-						cout << "Duplicate Symbol Error." << endl;
-					} 
+						cout << "Duplicate Symbol Error." << temp[0] << endl;
+					}
 					else {
 						ss << std::hex << LOC; // 將數字轉為 16 進位格式
 						InsertBTree(temp[0], ss.str());
 					}
+					
+				}
+				if (FindHash(temp[1])){
+					int format = FindFormat(temp[1]);
+					LOC += format;
 				}
 			}
 		}
@@ -49,6 +54,5 @@ void BuildBT() {
 			//LOC += FindFormat(temp[1]);
 			break;
 		}
-		cout << LOC << "\t" << temp[0] << "\t" << temp[1] << "\t" << temp[2] << endl;
 	}
 }

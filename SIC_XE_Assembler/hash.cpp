@@ -17,7 +17,7 @@ op_c opt[59]={
 	{  "ADDF", 3, 0x58},
 	{  "ADDR", 2, 0x90},
 	{   "AND", 3, 0x40},
-	{ "CLERA", 2, 0xB4},
+	{ "CLEAR", 2, 0xB4},
 	{  "COMP", 3, 0x28},
 	{ "COMPF", 3, 0x88},
 	{ "COMPR", 2, 0xA0},
