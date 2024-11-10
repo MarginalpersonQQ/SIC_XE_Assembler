@@ -8,6 +8,7 @@
 #include <windows.h>
 #include <typeinfo>
 #include <format> 
+#include <vector>
 
 //¥þ°ì¨ç¼Æ
 //pass 1

@@ -6,8 +6,8 @@ class treenode {
 public:
     string data;       
     string loc;        
-    treenode* left = NULL;   
-    treenode* right = NULL; 
+    treenode* left = nullptr;
+    treenode* right = nullptr;
 };
 
 
@@ -15,7 +15,7 @@ class b_tree {
 public:
     void b_treeinsert(string s, string lo);     
     void ino_show(treenode* root); 
-    treenode* tree = NULL; 
+    treenode* tree = nullptr;
 }; 
 b_tree btree;
 
@@ -24,14 +24,14 @@ void b_tree::b_treeinsert(string s, string lo) {
     newNode->data = s;
     newNode->loc = lo;
 
-    if (tree == NULL) {  
+    if (tree == nullptr) {
         tree = newNode;
         return;
     }
 
     treenode* p = tree;
-    treenode* pre = NULL;
-    while (p != NULL) {
+    treenode* pre = nullptr;
+    while (p != nullptr) {
         pre = p;
         if (s > p->data) {
             p = p->right;  
@@ -57,7 +57,7 @@ void b_tree::b_treeinsert(string s, string lo) {
 
 
 void b_tree::ino_show(treenode* root) {
-    if (root != NULL) {
+    if (root != nullptr) {
         ino_show(root->left);  
         cout << "²Å¸¹: " << root->data << ", ¦ì¸m: " << root->loc << endl;  
         ino_show(root->right);  
@@ -66,7 +66,7 @@ void b_tree::ino_show(treenode* root) {
 
 
 bool FindBTree(string symbol) {
-    if (btree.tree == NULL) {
+    if (btree.tree == nullptr) {
         return false;
     }
     else {
@@ -75,10 +75,10 @@ bool FindBTree(string symbol) {
             if (tempnode->data == symbol) {
                 return true;
             }
-            else if (tempnode->left != NULL && tempnode->data > symbol) {
+            else if (tempnode->left != nullptr && tempnode->data > symbol) {
                 tempnode = tempnode->left;
             }
-            else if (tempnode->right != NULL && tempnode->data < symbol) {
+            else if (tempnode->right != nullptr && tempnode->data < symbol) {
                 tempnode = tempnode->right;
             }
             else {

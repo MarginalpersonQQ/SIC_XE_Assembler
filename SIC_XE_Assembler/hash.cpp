@@ -80,7 +80,7 @@ class node{
         string data;
         int format;
         int opcode;
-        node *link = NULL;
+        node *link = nullptr;
 };
 
 class ha_sh{ 
@@ -89,7 +89,7 @@ class ha_sh{
         ha_sh(){
             table=new node *[prime];
             for(int i=0;i< prime;i++){
-                table[i]=NULL;
+                table[i]= nullptr;
             }
         }
         void hash_table();
@@ -112,7 +112,7 @@ void ha_sh::hash_table(){
         ind %= prime;
 
         
-        if(table[ind] == NULL){
+        if(table[ind] == nullptr){
             table[ind] = new node;
             table[ind]->data = opt[i].op_n;
             table[ind]->format = opt[i].ft;
@@ -138,8 +138,8 @@ void ha_sh::show_hash(){
    
     for(int i = 0; i < prime; i++){
         temp = table[i];  
-        while(temp != NULL){
-            if (temp->link != NULL){
+        while(temp != nullptr){
+            if (temp->link != nullptr){
                 cout << temp->data << "\t" << temp->format << "\t" << std::setw(2) << setfill('0') << hex << temp->opcode << " -> ";
             }
             else {
@@ -166,8 +166,8 @@ void hashTotxt() {
     node* temp;
     for (int i = 0; i < prime; i++) {
         temp = hashTable.table[i];
-        while (temp != NULL) {
-            if (temp->link != NULL) {
+        while (temp != nullptr) {
+            if (temp->link != nullptr) {
                 myfile << temp->data << "," << temp->format << "," << std::setw(2) << setfill('0') << hex << temp->opcode << "," <<" -> " << ",";
             }
             else {
@@ -189,8 +189,8 @@ bool FindHash(string keyword){
     }
     num %= prime;
     node *x = hashTable.table[num];
-    if (x != NULL) {
-        while (x != NULL) {  
+    if (x != nullptr) {
+        while (x != nullptr) {
             if (x->data == keyword) {  
                 return true;  
             }
@@ -211,8 +211,8 @@ int FindFormat(string keyword) {
     }
     num %= prime;
     node* x = hashTable.table[num];
-    if (x != NULL) {
-        while (x != NULL) {
+    if (x != nullptr) {
+        while (x != nullptr) {
             if (x->data == keyword) {
                 return x->format + sum;
             }

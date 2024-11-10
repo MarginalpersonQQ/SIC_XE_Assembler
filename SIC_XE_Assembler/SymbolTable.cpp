@@ -19,13 +19,16 @@ void BuildBTreeAndLoc() {
 		LOC = 0x0;
 	}
 	stringstream ss;
-	
-	
+
 	while (getline(myfile, line))
-	{
+	{	
+		if (line.length() <= 1) {
+			continue;
+		}
 		string temp[3] = {};
 		istringstream data(line);
 		data >> temp[0] >> temp[1] >> temp[2];
+		
 		if (temp[1] == "START") {
 			cout << "\t" << temp[0] << "\t" << temp[1] << "\t" << temp[2] << endl;
 			writefile << format(" {} {} {}\n", temp[0], temp[1], temp[2]);
@@ -50,7 +53,6 @@ void BuildBTreeAndLoc() {
 						string x = format("{:#x}", LOC);
 						InsertBTree(temp[0], x);
 					}
-					
 				}
 				if (temp[1] != "BASE") {
 					cout << hex << LOC << "\t" << temp[0] << "\t" << temp[1] << "\t" << temp[2] << endl;
@@ -91,11 +93,12 @@ void BuildBTreeAndLoc() {
 				
 			}
 		}
-		else {
+		else{
 			cout << "\t" << temp[0] << "\t" << temp[1] << "\t" << temp[2] << endl;
 			writefile << format("  {} {} {}\n", temp[0], temp[1], temp[2]);
 			break;
 		}
 	}
 	writefile.close();
+	myfile.close();
 }

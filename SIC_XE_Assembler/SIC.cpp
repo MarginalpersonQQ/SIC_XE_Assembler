@@ -24,7 +24,7 @@ void pass2() {
 int main() {
 	//pass 1
 	pass1();
-	system("pause");
 	pass2();
+	system("pause");
 	return 0;
 }
