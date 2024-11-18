@@ -18,12 +18,21 @@ void pass1() {
 }
 
 void pass2() {
-	cout << "Pass2 To Be Continued..." << endl;
+	cout << "=========================================" << endl;
+	cout << "Start Pass 2\n" << endl;
+	if (countOBC()) {
+		cout << "OBC is counted." << endl;
+	}
+	else {
+		cout << "\nOBC is not counted\n" << endl;
+	}
 }
 
 int main() {
-	//pass 1
+	//pass 1	
 	pass1();
+	system("pause");
+	//pass 2
 	pass2();
 	system("pause");
 	return 0;
