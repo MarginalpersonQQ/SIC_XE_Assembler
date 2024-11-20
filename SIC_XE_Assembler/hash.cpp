@@ -222,7 +222,25 @@ int FindFormat(string keyword) {
     return 0;
 }
 
-int FindOpCode() {
-    return 0;
+int FindOpCode(string ins){
+    int count = 0;
+    if (ins[0] == '+') {
+        ins = ins.substr(1);
+    }
+    for (int j = 0; j < ins.length(); j++) {
+        count = (count * rendom_number + (ins[j] - 'A' + 1));         //(opt[i].op_n[j] - 'A' + 1)­pºâASCII¡C
+    }
+    count %= prime;
+    node* x = hashTable.table[count];
+    if (x != nullptr) {
+        while (x != nullptr) {
+            if (x->data == ins) {
+                return x -> opcode;
+            }
+            x = x->link;
+        }
+    }
+
+    return -1;
 }
 
