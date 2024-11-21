@@ -16,6 +16,7 @@ void pass1() {
 	ShowBTree();
 	cout << endl;
 	cout << "START LOC:" << hex << START_LOC << "\tPROGRAM LENGTH:" << hex << PROGRAM_LEN << endl;
+	//«¢«¢
 }
 
 void pass2() {
