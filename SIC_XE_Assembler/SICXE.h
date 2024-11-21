@@ -28,4 +28,6 @@ extern std::string FindBTree_LOC(std::string symbol);
 //全域變數
 extern int rendom_number; //37可以為任意質數
 extern int prime;
-extern int LOC;
+extern int LOC;	
+extern int START_LOC;
+extern int PROGRAM_LEN;

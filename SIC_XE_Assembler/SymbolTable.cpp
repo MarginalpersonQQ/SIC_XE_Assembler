@@ -1,6 +1,8 @@
 #include "SICXE.h"
 using namespace std;
 int LOC = 0x0;
+int START_LOC;
+int PROGRAM_LEN;
 
 bool BuildBTreeAndLoc() {
 	ofstream writefile;
@@ -30,6 +32,7 @@ bool BuildBTreeAndLoc() {
 			cout << "\t" << temp[0] << "\t" << temp[1] << "\t" << temp[2] << endl;
 			writefile << format("NULL {} {} {}\n", temp[0], temp[1], temp[2]);
 			LOC = stoi(temp[2], nullptr, 16);
+			START_LOC = LOC;
 			string x = format("{:#x}", LOC);
 			InsertBTree(temp[0], x);
 			continue;
@@ -98,6 +101,7 @@ bool BuildBTreeAndLoc() {
 			}
 		}
 		else{
+			PROGRAM_LEN = LOC - START_LOC;
 			cout << "\t" << temp[0] << "\t" << temp[1] << "\t" << temp[2] << endl;
 			if (temp[0] == " ") {
 				temp[0] = "NULL";

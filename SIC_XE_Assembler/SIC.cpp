@@ -15,6 +15,7 @@ void pass1() {
 	cout << "\nBuild Completed!\n" << endl;
 	ShowBTree();
 	cout << endl;
+	cout << "START LOC:" << hex << START_LOC << "\tPROGRAM LENGTH:" << hex << PROGRAM_LEN << endl;
 }
 
 void pass2() {
@@ -26,6 +27,7 @@ void pass2() {
 	else {
 		cout << "\nOBC is not counted\n" << endl;
 	}
+	cout << "\nPass 2 completed!!" << endl;
 }
 
 int main() {
