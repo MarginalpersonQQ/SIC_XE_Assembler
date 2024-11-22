@@ -4,6 +4,8 @@ struct pro {
 	string loc;
 	string obc;
 };
+//321646
+//654654
 pro s[100];
 int i = 0;
 void obpro() {
