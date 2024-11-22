@@ -31,7 +31,7 @@ void obpro() {
 			if (count == 0) {
 				cout << "T^" << setfill('0') << setw(6) << stoi(temp[0], nullptr, 16) << "^";
 				Tcount = Tcount + "^" + temp[4];
-				count += temp[4].length() / 2;
+				count += (int)temp[4].length() / 2;
 			}
 			else if (count == 27 && ((temp[4].length() / 2 == 4))) {
 				cout << count << Tcount << endl;
@@ -41,7 +41,7 @@ void obpro() {
 			}
 			else {
 				Tcount = Tcount + "^" + temp[4];
-				count += temp[4].length() / 2;
+				count += (int)temp[4].length() / 2;
 			}
 		}
 		else if (temp[2] == "RESW" || temp[2] == "RESB") {
@@ -54,19 +54,19 @@ void obpro() {
 		else if (count > 27) {
 			if (count == 28 && ((temp[4].length() / 2 == 2))) {
 				Tcount = Tcount + "^" + temp[4];
-				count += temp[4].length() / 2;
+				count += (int)temp[4].length() / 2;
 			}
 			else if (count == 28 && ((temp[4].length() / 2 == 1))) {
 				Tcount = Tcount + "^" + temp[4];
-				count += temp[4].length() / 2;
+				count += (int)temp[4].length() / 2;
 			}
 			else if (count == 29 && ((temp[4].length() / 2 == 1))) {
 				Tcount = Tcount + "^" + temp[4];
-				count += temp[4].length() / 2;
+				count += (int)temp[4].length() / 2;
 			}
 			else {
 				cout << count << Tcount << endl;
-				count = temp[4].length() / 2;
+				count = (int)temp[4].length() / 2;
 				Tcount = "^" + temp[4];
 			}
 			cout << "T^" << setfill('0') << setw(6) << stoi(temp[0], nullptr, 16) << "^";
