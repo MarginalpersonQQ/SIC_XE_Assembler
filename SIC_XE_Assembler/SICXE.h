@@ -24,10 +24,11 @@ extern void ShowBTree();
 extern int FindOpCode(std::string ins); 
 extern bool countOBC();
 extern std::string FindBTree_LOC(std::string symbol);
+extern void obpro();
 
 //全域變數
 extern int rendom_number; //37可以為任意質數
 extern int prime;
 extern int LOC;	
-extern int START_LOC;
+extern int START_LO;
 extern int PROGRAM_LEN;

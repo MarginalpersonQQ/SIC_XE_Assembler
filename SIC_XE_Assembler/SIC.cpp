@@ -15,7 +15,7 @@ void pass1() {
 	cout << "\nBuild Completed!\n" << endl;
 	ShowBTree();
 	cout << endl;
-	cout << "START LOC:" << hex << START_LOC << "\tPROGRAM LENGTH:" << hex << PROGRAM_LEN << endl;
+	cout << "START LOC:" << hex << START_LO << "\tPROGRAM LENGTH:" << hex << PROGRAM_LEN << endl;
 }
 
 void pass2() {
@@ -30,12 +30,22 @@ void pass2() {
 	cout << "\nPass 2 completed!!" << endl;
 }
 
+void program() {
+	cout << "=========================================" << endl;
+	cout << "Start Object Program\n" << endl;
+	obpro();
+	cout<< "\nObject Program completed!!" << endl;
+}
+
 int main() {
 	//pass 1	
 	pass1();
 	system("pause");
 	//pass 2
 	pass2();
+	system("pause");
+	//Object Program
+	program();
 	system("pause");
 	return 0;
 }
