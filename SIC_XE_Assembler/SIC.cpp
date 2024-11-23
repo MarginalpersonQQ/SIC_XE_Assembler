@@ -15,7 +15,7 @@ void pass1() {
 	cout << "\nBuild Completed!\n" << endl;
 	ShowBTree();
 	cout << endl;
-	cout << "START LOC:" << hex << START_LO << "\tPROGRAM LENGTH:" << hex << PROGRAM_LEN << endl;
+	cout << "START LOC:" << hex << START_LOC << "\tPROGRAM LENGTH:" << hex << PROGRAM_LEN << endl;
 }
 
 void pass2() {

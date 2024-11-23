@@ -30,5 +30,5 @@ extern void obpro();
 extern int rendom_number; //37可以為任意質數
 extern int prime;
 extern int LOC;	
-extern int START_LO;
+extern int START_LOC;
 extern int PROGRAM_LEN;
