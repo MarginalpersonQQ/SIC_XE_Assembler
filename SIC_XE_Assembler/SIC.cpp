@@ -28,13 +28,11 @@ void pass2() {
 		cout << "\nOBC is not counted\n" << endl;
 	}
 	cout << "\nPass 2 completed!!" << endl;
-}
-
-void program() {
-	cout << "=========================================" << endl;
+	//object program
+	cout << "==================================s=======" << endl;
 	cout << "Start Object Program\n" << endl;
 	obpro();
-	cout<< "\nObject Program completed!!" << endl;
+	cout << "\nObject Program completed!!" << endl;
 }
 
 int main() {
@@ -45,7 +43,6 @@ int main() {
 	pass2();
 	system("pause");
 	//Object Program
-	program();
 	system("pause");
 	return 0;
 }
