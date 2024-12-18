@@ -144,10 +144,18 @@ bool countOBC() {
 								opcode += status;
 								ss << hex << opcode << xbpe;
 								if (!FindBTree(no_sign_ins)) {
-									stringstream aa;
-									aa << hex << stoi(no_sign_ins);
-									string temp2 = aa.str();
-									temp = temp + ss.str() + "0" + temp2;
+									try {
+										stringstream aa;
+										aa << hex << stoi(no_sign_ins);
+										string temp2 = aa.str();
+										temp = temp + ss.str() + "0" + temp2;
+									}
+									catch (...) { // ¿ù»~¾Þ§@½X
+										cout << "\n---------------------------------------------------\n"
+											<< "\tError : Error Operand!!\n\t\t" << no_sign_ins
+											<< "\n---------------------------------------------------\n" << endl;
+										break;
+									}
 								}
 								else {
 									string temp2 = FindBTree_LOC(no_sign_ins);

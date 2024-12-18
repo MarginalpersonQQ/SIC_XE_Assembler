@@ -29,7 +29,7 @@ void pass2() {
 	}
 	cout << "\nPass 2 completed!!" << endl;
 	//object program
-	cout << "==================================s=======" << endl;
+	cout << "=========================================" << endl;
 	cout << "Start Object Program\n" << endl;
 	obpro();
 	cout << "\nObject Program completed!!" << endl;
@@ -43,6 +43,5 @@ int main() {
 	pass2();
 	system("pause");
 	//Object Program
-	system("pause");
 	return 0;
 }

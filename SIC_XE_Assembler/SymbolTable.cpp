@@ -94,8 +94,11 @@ bool BuildBTreeAndLoc() {
 					cout << "\t\t" << temp[1] << "\t" << temp[2] << endl;
 					writefile << format("NULL NULL {} {}\n", temp[1], temp[2]);
 				}
-				else {
-					cout << "error command " << temp[1] << endl;
+				else { // 錯誤指令中斷程式
+					cout << "\n---------------------------------------------------\n"
+						<<"\tError : Error OPCode!!\n\t\t" << temp[0] 
+						<< "\n---------------------------------------------------\n" << endl;
+					break;
 				}
 				
 			}
