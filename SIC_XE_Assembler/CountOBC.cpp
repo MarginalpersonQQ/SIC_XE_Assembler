@@ -33,7 +33,7 @@ string findRegister(char word) {
 			return SW;
 			break;
 		default:
-			return 0;
+			return "ERROR";
 	}
 }
 
@@ -101,16 +101,34 @@ bool countOBC() {
 						else {
 							opcode = FindOpCode(split_ins[2]);
 							format = FindFormat(split_ins[2]);
-							if (format == 2) {
+							if (format == 2) { // format 2
 								string temp = "";
 								stringstream ss;
 								if (split_ins[3].length() > 1) {
 									string a = findRegister(split_ins[3][0]);
 									string b = findRegister(split_ins[3][2]);
+									if (a == "ERROR") {
+										cout << "\n---------------------------------------------------\n"
+											<< "\tError : Error Operand!!\n\t\t" << split_ins[3][0]
+											<< "\n---------------------------------------------------\n" << endl;
+										break;
+									}
+									if (b == "ERROR") {
+										cout << "\n---------------------------------------------------\n"
+											<< "\tError : Error Operand!!\n\t\t" << split_ins[3][2]
+											<< "\n---------------------------------------------------\n" << endl;
+										break;
+									}
 									temp = a + b;
 								}
 								else{
 									string a = findRegister(split_ins[3][0]);
+									if (a == "ERROR") {
+										cout << "\n---------------------------------------------------\n"
+											<< "\tError : Error Operand!!\n\t\t" << split_ins[3][0]
+											<< "\n---------------------------------------------------\n" << endl;
+										break;
+									}
 									temp = a + "0";
 								}
 								ss << hex <<opcode;
@@ -195,7 +213,15 @@ bool countOBC() {
 								opcode += status;
 								//­pºâdisp¨Ã§PÂ_bp
 								if (!FindBTree(no_sign_ins)) {
-									disp = stoi(no_sign_ins, nullptr, 16);
+									try {
+										disp = stoi(no_sign_ins, nullptr, 16);
+									}
+									catch (...) {
+										cout << "\n---------------------------------------------------\n"
+											<< "\tError : Error Operand!!\n\t\t" << no_sign_ins
+											<< "\n---------------------------------------------------\n" << endl;
+										break;
+									}
 								}
 								else {
 									int loc = stoi(FindBTree_LOC(no_sign_ins), nullptr, 16);
